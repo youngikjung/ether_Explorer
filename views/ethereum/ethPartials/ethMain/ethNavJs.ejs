@@ -1,0 +1,62 @@
+<script type="text/javascript" href="/js/ethNavJs.js">
+    $(document).ready(function(){
+        $('.myBtn').on('click', function(){
+            $('#actModal, #searchNew, .makeAccount, #makeContent, #actButton').show();
+            $('#loginGo').hide();
+            return false;
+        });
+
+        $('#logIn').on('click', function(){
+            $('#actModal, #loginGo').show();
+            $('#searchNew, .makeAccount, #makeContent, #actButton').hide();
+            return false;
+        });
+
+        $('.close').on('click', function(){
+            $('#actModal').hide();
+            return false;
+        });
+
+        $(document).on('click', function(e){
+            if($('#actModal').is(e.target)) {
+                $('#actModal').hide();
+                return false;
+            }
+        });
+
+        $('#makeNew').on('click', async function(){
+            console.log("good");
+            var reqValue = $('#getaccount').val();
+            if(reqValue == '' || reqValue == null) {
+                alert("비밀번호를 입력해 주세요.");
+                return false;
+            } else {
+                var result = await fn_newAccount(reqValue);
+                $('.newAccount, #newContent').show();
+                $('.makeAccount, #makeContent, #actButton').hide();
+                $('#newAddress').empty().html(result);
+            }
+        });
+
+        var fn_newAccount = async function(reqValue) {
+            return new Promise(function (resolve, reject) {
+                try {
+                    var passwd = reqValue;
+                    $.ajax({
+                        url: '/ethereum/getAccount',
+                        dataType: 'json',
+                        type: 'POST',
+                        data: {data:passwd},
+                        success: function(result) {
+                            resolve(result);
+                        }
+                    });
+                } catch (error) {
+                    console.log('fail');
+                    reject(error);
+                }
+            }).catch(e => console.log(e));
+        };
+
+    });
+</script>

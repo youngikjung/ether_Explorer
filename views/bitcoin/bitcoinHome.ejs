@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <% include ./bitPartials/head %>    
+    </head>
+    <body>
+        <% include ./bitPartials/bitcoinNav %>
+       
+        <div class="container home home-welcome">
+            <div class="jumbotron" style="padding-top: 1px;padding-right: 10px;background-color:#64e64a">
+                <div class="search">
+                    <form action="/bitcoin/searchBitBlockNumber" method="POST" id="frm">
+                        <div><h3>Bitcoin</h3></div>
+                        <select name="lstSubject">       
+                            <option value='block'>block</option>
+                            <option value='address'>address</option>
+                        </select>     
+                        <input type="text" id="search" name="search" placeholder="Search something..." style="width: 804px;">
+                        
+                        <button class='getMethod'><span>Click</span></button>
+                    </form>
+                </div>                
+            </div>
+        </div>
+        
+
+    </body>
+</html>
+

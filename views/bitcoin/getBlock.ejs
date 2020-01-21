@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <% include ./bitPartials/head %>    
+    </head>
+    <body>
+        <% include ./bitPartials/bitcoinNav %>
+        <script type="text/javascript">
+            $(document).ready(function(){            
+                $("span a[class='transactions']").on('click', function(){
+                    window.location.href = '/bitcoin/goTransactionsBit/' + '<%=block.height%>';  
+                });   
+                function numberWithCommas(x) {
+                    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                }
+                function unixTime(t) {
+                    var date    = new Date(t*1000);
+                    var year    = date.getFullYear();
+                    var month   = "0" + (date.getMonth()+1);
+                    var day     = "0" + date.getDate();
+                    var hour    = "0" + date.getHours();
+                    var minute  = "0" + date.getMinutes();
+                    var second  = "0" + date.getSeconds();
+                    return year + "-" + month.substr(-2) + "-" + day.substr(-2) + " " + hour.substr(-2) + ":" + minute.substr(-2) + ":" + second.substr(-2);               
+                }
+                $('#time').html(unixTime("<%=block.time%>"));
+                $('#size').html(numberWithCommas("<%=block.size%>"));
+                $('#weight').html(numberWithCommas("<%=block.weight%>"));                              
+            });       
+
+            
+        </script>
+        <div class="container home home-welcome">
+            <div class="jumbotron" style="padding-top: 1px;padding-right: 10px;background-color:#e7e7e7"> 
+                <h3>Bitcoin Blocks</h3>    
+            </div>
+            <div>     
+                <div class="contentBox">
+                    <div><ul><li>OverView</li></ul></div>
+                    <% if(block.length == 0){%>
+                        there is no data
+                    <% } else {%>
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="passwordConfirmation" class="col-sm-3 control-label" title="비트코인의 버젼">version</label>
+                                <div class="col-sm-9">
+                                    <span class="form-control" type="text" id="version" name="version"><%=block.version%></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="username" class="col-sm-3 control-label" title="특정 블록을 식별하는 데 사용되는 고유 식별자">Hash</label>
+                                <div class="col-sm-9">
+                                    <span class="form-control" type="text" id="hash" name="hash"><%=block.hash%></span>
+                                </div>  
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="col-sm-3 control-label" title="transaction의 confirm수">confirm</label>
+                                <div class="col-sm-9">
+                                    <span class="form-control" type="text" id="confirmations" name="confirmations"><%=block.confirmations%></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-3 control-label" title="이 블럭이 생성될때의 시간">time Stamp</label>
+                                <div class="col-sm-9">
+                                    <span class="form-control" type="text" id="time" name="time"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="col-sm-3 control-label" title="블록 체인에 연결된 블록 수">Height</label>
+                                <div class="col-sm-9">
+                                    <span class="form-control" type="text" id="height" name="height"><%=block.height%></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="passwordConfirmation" class="col-sm-3 control-label" title="이 블록에 유효한 해시를 찾는 것이 얼마나 어려운지의 수학적 값">Difficulty</label>
+                                <div class="col-sm-9">
+                                    <span class="form-control" type="text" id="difficulty" name="difficulty"><%=block.difficulty%></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="passwordConfirmation" class="col-sm-3 control-label" title="머클 트리의 루트 노드, 트리의 모든 해시 쌍의 자손">Merkleroot</label>
+                                <div class="col-sm-9">
+                                    <span class="form-control" type="text" id="merkleroot" name="merkleroot"><%=block.merkleroot%></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="passwordConfirmation" class="col-sm-3 control-label" title="블록의 총 크기">size</label>
+                                <div class="col-sm-9">
+                                    <span class="form-control" type="text" id="size" name="size"> bytes</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="passwordConfirmation" class="col-sm-3 control-label" title="블록 크기 제한에 비례하여 서로 다른 거래의 크기를 서로 비교하는 측정">Weight</label>
+                                <div class="col-sm-9">
+                                    <span class="form-control" type="text" id="weight" name="weight"> WU</span>
+                                </div>
+                            </div> 
+                            <div class="form-group">
+                                <label for="passwordConfirmation" class="col-sm-3 control-label" title="이전 블록의 hash값">previousblockhash</label>
+                                <div class="col-sm-9">
+                                    <span class="form-control" type="text" id="previousblockhash" name="previousblockhash"><%=block.previousblockhash%></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="passwordConfirmation" class="col-sm-3 control-label" title="채굴하기 위한 난이도 목표 값">Nonce</label>
+                                <div class="col-sm-9">
+                                    <span class="form-control" type="text" id="nonce" name="nonce" ><%=block.nonce%></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="passwordConfirmation" class="col-sm-3 control-label" title="해당 블록에서 이루어진 거래들">Transactions</label>
+                                <div class="col-sm-9">
+                                    <span class="form-control" type="text" id="transactions" name="transactions" value=""><a class='transactions'><%=block.tx.length%> Transactions</a></span>
+                                </div>
+                            </div>
+                        </fieldset>
+                    <% }%>    
+                </div>
+            </div>
+            <div class="buttons"><a class="btn btn-default" href="/bitcoin/back">back</a></div>             
+        </div>
+    </body>
+</html>
+

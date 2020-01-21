@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <% include ./ethPartials/head %>    
+    </head>
+    <body>
+        <% include ./ethPartials/ethMain/ethereumNav %>
+        <% include ./ethPartials/etherDB/getTxJS %>
+        <div class="container home home-welcome"> 
+            <div class='signBody'>
+                <h3>
+                    <a id="" class="deep-link" href="" aria-hidden="true" rel="nofollow">
+                        <svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"></svg>
+                    </a>
+                    Ethereum / transactions
+                </h3>
+                <hr>             
+            </div>
+            <div class="wrap-table100">
+                <div class="table100 ver1 m-b-110" id="dbtx-connecter">
+                    <div class="table100-head">
+                        <table>
+                            <thead>
+                                <tr class="row100 head">
+                                    <th class="cell100 column1">Txn Hash</th>
+                                    <th class="cell100 column2">Block</th>
+                                    <th class="cell100 column3">From</th>
+                                    <th class="cell100 column4">To</th>
+                                    <th class="cell100 column5">Value</th>
+                                    <th class="cell100 column6">[Txn Fee]</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    
+                </div>
+            </div>     
+        </div>
+    </body>
+</html>
+

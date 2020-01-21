@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <% include ./ethPartials/head %>    
+    </head>
+    <body>
+        <% include ./ethPartials/ethMain/ethereumNav %>
+        <div class="container home home-welcome">
+            <div class="jumbotron" style="padding-top: 1px;padding-right: 10px;background-color:#e7e7e7"> 
+                <h3>Ethereum Address</h3>    
+            </div>
+            <div>
+                <div><ul><li>OverView</li></ul></div>     
+                <div class="contentBox">
+                    <div>
+                        <% if(block.length == 0){%>
+                            there is no data
+                        <% } else {%>
+                            <fieldset>
+                                <div class="form-group">
+                                    <label for="username" class="col-sm-3 control-label">Balance</label>
+                                    <div class="col-sm-9">
+                                        <span class="form-control" type="text" id="Block Height" name="Block Height" value=""><%=block%> Ether</span>
+                                    </div>  
+                                </div>
+                                <div class="form-group">
+                                    <label for="name" class="col-sm-3 control-label">Ether Value</label>
+                                    <div class="col-sm-9">
+                                        <span class="form-control" type="text" id="timestamp" name="timestamp" value=""></span>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        <% }%> 
+                    </div>   
+                </div>
+            </div>
+            <div class="buttons"><a class="btn btn-default" href="/ethereum/back">back</a></div>             
+        </div>
+    </body>
+</html>
+

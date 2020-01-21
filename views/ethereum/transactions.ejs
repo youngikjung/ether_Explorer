@@ -1,0 +1,69 @@
+
+<html>
+    <head>
+        <% include ./ethPartials/head %>    
+    </head>
+    <body>
+        <% include ./ethPartials/ethMain/ethereumNav %>
+        <script type="text/javascript">
+            $(document).ready(function(){  
+                function unixTime(t) {
+                    var date    = new Date(t*1000);
+                    var year    = date.getFullYear();
+                    var month   = "0" + (date.getMonth()+1);
+                    var day     = "0" + date.getDate();
+                    var hour    = "0" + date.getHours();
+                    var minute  = "0" + date.getMinutes();
+                    var second  = "0" + date.getSeconds();
+                    return year + "-" + month.substr(-2) + "-" + day.substr(-2) + " " + hour.substr(-2) + ":" + minute.substr(-2) + ":" + second.substr(-2);               
+                }
+
+                $('.Block').html('block Number  #' + sessionStorage.getItem('Block Height'));
+                $('.Age').html('A Total of   ' + '<%= block.length %>' + '  transactions,          ' + '생성시간   :   ' + unixTime(sessionStorage.getItem('Time Stamp')));              
+            });                   
+        </script>
+        <div class="container home home-welcome">
+            <div class='signBody'>
+                <h3>
+                    <a id="" class="deep-link" href="" aria-hidden="true" rel="nofollow">
+                        <svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"></svg>
+                    </a>
+                    Ethereum / transactions
+                </h3>
+                <hr>
+                </br>
+                <blockquote>
+                    <p class="Block"></p>
+                </blockquote>
+                <h5>
+                    <p class="Age"></p>
+                </h5>       
+                <hr>              
+            </div>
+            <% if(block.length != 0){%>
+                <% block.forEach(function(post) { %>
+                    <div class='signBody'>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" style="width: 200px;">Txn Hash</span>
+                                <span type="text" value="" class="form-control" name="Block Height" style="width: 1026px;">
+                                    <a href="/ethereum/transactionInfo/<%= post%>"><%=post%></a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } else {%>
+                <div class='signBody'>
+                    <div class="form-group">
+                        <div class="input-group">
+                        </div>
+                    </div>
+                </div>
+            <% } %>                       
+            </br>
+            <p>Copyright 2016, Ethereum Revision 341015ab.</p>         
+        </div>
+    </body>
+</html>
+

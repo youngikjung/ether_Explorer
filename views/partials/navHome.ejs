@@ -1,0 +1,53 @@
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(function(){
+            $("#loading").hide();
+            setNowTime();
+        });
+        
+        function addZero(i){
+            if(i < 10){
+                i = "0" + i;
+            }
+            return i;
+        }
+        function timestampPactory(timestamp){
+            var time_string = timestamp.getFullYear().toString() + "-"
+                +addZero(timestamp.getMonth()+1)+"-"
+                +addZero(timestamp.getDate())+" "
+                +addZero(timestamp.getHours())+":"
+                +addZero(timestamp.getMinutes())+":"
+                +addZero(timestamp.getSeconds());
+            return time_string;
+        }
+    
+        function setNowTime(){
+            var nav_now_timestamp = new Date().getTime();
+            nav_now_timestamp = new Date(parseInt(nav_now_timestamp));
+            var time_string = timestampPactory(nav_now_timestamp);
+    
+            //자정에 새로고침
+            if(time_string.substring(11,time_string.length) == "00:00:00"){
+                location.reload();
+            }
+            $(".current_time").text(time_string);
+        }
+        setInterval(setNowTime,1000); 
+    });             
+</script>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+            </button>
+        <div class="navbar-brand">BlockChain</div>
+    </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav"></ul>
+            <ul class="nav navbar-nav navbar-right"> <!-- 1 -->
+                <li><a class="current_time"></a></li>
+            </ul>           
+        </div>
+    </div>
+</nav>

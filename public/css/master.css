@@ -1,0 +1,121 @@
+
+/* GENERAL BUTTON STYLING */
+
+
+.home h2{
+    font-size : 15px;
+}
+.jumbotron{
+    padding-top : 10px;
+    padding-bottom: 10px;
+}
+form label{
+    padding: 3px;
+    margin-bottom: 0;
+    font-weight: 300;
+}
+form .form-control{
+    padding: 3px 7px;
+    font-size: inherit;
+    line-height: 20px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 100%;
+}
+form fieldset{
+    margin: 7px 0 1px;
+    padding: 0px 15px;
+}
+form .form-group{
+    margin: 0;
+    padding-bottom: 6px;
+}
+.form-horizontal .control-label {
+    padding-top: 5px;
+    text-align: left;
+}
+
+.contentBox{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.contentBoxTop {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+    background-color: #F5F5F5;
+    padding: 6px 15px;
+}
+
+/* home style */
+.home h1{
+    color: darkseagreen;
+}
+
+/* post style */
+.post {
+    max-width: 670px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+}
+.post h2 {
+    text-align: center;
+}
+.post .post-body {
+    white-space: pre-line;
+    padding: 6px 15px 20px;
+}
+.post .post-info{
+    font-size: 11px;
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #E4E4E4;
+    border: 0 solid black;
+    border-radius: 5px;
+}
+.post .post-info>div{
+    padding: 5px 0;
+    border-top: 1px dotted #999;
+}
+.post .post-info>div:first-child{
+    border-top: none;
+}
+.post .post-info span{
+    display: inline-block;
+    width: 40px;
+}
+.post-index .posts{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.post .posts th,.post .posts td
+{
+    padding: 7px 5px;
+}
+.post .posts th:first-child,.post .posts td:first-child
+{
+    padding-left: 15px;
+}
+.post .posts thead{
+    background-color: #F5F5F5;
+}
+.post .posts thead tr th{
+    border-bottom: 1px solid #ccc;
+}
+.post .posts tbody tr:nth-child(odd){
+    background-color: #F4FFFF;
+}
+.post .posts tbody .noData{
+    background-color: #FFFFFF;
+    text-align: center;
+}
+.post .posts .date{
+    text-align: center;
+    width: 100px;
+    padding-right: 15px;
+}
+.post-new,.post-edit{
+    max-width: 520px;
+}

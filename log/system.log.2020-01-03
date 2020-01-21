@@ -1,0 +1,59 @@
+2020-01-03 10:52:15 [INFO] - server has started on port 3000
+2020-01-03 10:59:30 [INFO] - server has started on port 3000
+2020-01-03 11:00:56 [INFO] - 진입
+2020-01-03 11:00:59 [ERROR] - request to http://10.10.30.165:3000/getBlockDB failed, reason: connect ECONNREFUSED 10.10.30.165:3000
+2020-01-03 11:01:28 [ERROR] - request to http://10.10.30.165:3000/getBlockDB failed, reason: connect ECONNREFUSED 10.10.30.165:3000
+2020-01-03 11:01:36 [ERROR] - request to http://10.10.30.165:3000/getBlockDB failed, reason: connect ECONNREFUSED 10.10.30.165:3000
+2020-01-03 11:01:43 [ERROR] - request to http://10.10.30.165:3000/getBlockDB failed, reason: connect ECONNREFUSED 10.10.30.165:3000
+2020-01-03 11:01:49 [ERROR] - request to http://10.10.30.165:3000/getBlockDB failed, reason: connect ECONNREFUSED 10.10.30.165:3000
+2020-01-03 11:01:56 [ERROR] - request to http://10.10.30.165:3000/getBlockDB failed, reason: connect ECONNREFUSED 10.10.30.165:3000
+2020-01-03 11:03:02 [INFO] - server has started on port 3000
+2020-01-03 11:03:04 [ERROR] - request to http://10.10.30.165:3000/getBlockDB failed, reason: connect ECONNREFUSED 10.10.30.165:3000
+2020-01-03 11:03:04 [ERROR] - request to http://10.10.30.165:3000/getBlockDB failed, reason: connect ECONNREFUSED 10.10.30.165:3000
+2020-01-03 11:03:04 [ERROR] - request to http://10.10.30.165:3000/getBlockDB failed, reason: connect ECONNREFUSED 10.10.30.165:3000
+2020-01-03 11:03:04 [ERROR] - request to http://10.10.30.165:3000/getBlockDB failed, reason: connect ECONNREFUSED 10.10.30.165:3000
+2020-01-03 11:03:04 [ERROR] - request to http://10.10.30.165:3000/getBlockDB failed, reason: connect ECONNREFUSED 10.10.30.165:3000
+2020-01-03 11:03:04 [ERROR] - request to http://10.10.30.165:3000/getBlockDB failed, reason: connect ECONNREFUSED 10.10.30.165:3000
+2020-01-03 11:03:19 [ERROR] - request to http://10.10.30.165:3000/getBlockDB failed, reason: connect ECONNREFUSED 10.10.30.165:3000
+2020-01-03 11:03:19 [ERROR] - request to http://10.10.30.165:3000/getBlockDB failed, reason: connect ECONNREFUSED 10.10.30.165:3000
+2020-01-03 11:03:19 [ERROR] - request to http://10.10.30.165:3000/getBlockDB failed, reason: connect ECONNREFUSED 10.10.30.165:3000
+2020-01-03 11:03:19 [ERROR] - request to http://10.10.30.165:3000/getBlockDB failed, reason: connect ECONNREFUSED 10.10.30.165:3000
+2020-01-03 11:03:19 [ERROR] - request to http://10.10.30.165:3000/getBlockDB failed, reason: connect ECONNREFUSED 10.10.30.165:3000
+2020-01-03 11:03:28 [INFO] - server has started on port 3000
+2020-01-03 11:03:33 [INFO] - 진입
+2020-01-03 11:03:50 [INFO] - {
+  _id: 5df997daccf8a224942e53df,
+  password: '$2a$10$icz2v7Jnpt83AgdWO43mWejAxXrqqOzXWB22mz5lUMPWlTFKNrrlq',
+  id: '5df997daccf8a224942e53df'
+}login
+2020-01-03 11:04:24 [INFO] - server has started on port 3000
+2020-01-03 11:04:28 [INFO] - {
+  _id: 5df997daccf8a224942e53df,
+  password: '$2a$10$icz2v7Jnpt83AgdWO43mWejAxXrqqOzXWB22mz5lUMPWlTFKNrrlq',
+  id: '5df997daccf8a224942e53df'
+}login
+2020-01-03 11:04:52 [INFO] - server has started on port 3000
+2020-01-03 11:04:56 [INFO] - {
+  _id: 5df997daccf8a224942e53df,
+  password: '$2a$10$icz2v7Jnpt83AgdWO43mWejAxXrqqOzXWB22mz5lUMPWlTFKNrrlq',
+  id: '5df997daccf8a224942e53df'
+}login
+2020-01-03 11:05:18 [INFO] - server has started on port 3000
+2020-01-03 11:05:22 [INFO] - {
+  _id: 5df997daccf8a224942e53df,
+  password: '$2a$10$icz2v7Jnpt83AgdWO43mWejAxXrqqOzXWB22mz5lUMPWlTFKNrrlq',
+  id: '5df997daccf8a224942e53df'
+}login
+2020-01-03 11:06:23 [INFO] - server has started on port 3000
+2020-01-03 11:06:27 [INFO] - {
+  _id: 5df997daccf8a224942e53df,
+  password: '$2a$10$icz2v7Jnpt83AgdWO43mWejAxXrqqOzXWB22mz5lUMPWlTFKNrrlq',
+  id: '5df997daccf8a224942e53df'
+}login
+2020-01-03 11:06:43 [INFO] - server has started on port 3000
+2020-01-03 11:06:47 [INFO] - {
+  _id: 5df997daccf8a224942e53df,
+  password: '$2a$10$icz2v7Jnpt83AgdWO43mWejAxXrqqOzXWB22mz5lUMPWlTFKNrrlq',
+  id: '5df997daccf8a224942e53df'
+}login
+2020-01-03 11:06:49 [ERROR] - request to http://10.10.30.165:3000/getBlockDB failed, reason: connect ECONNREFUSED 10.10.30.165:3000

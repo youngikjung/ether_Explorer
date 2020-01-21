@@ -1,0 +1,140 @@
+<html>
+    <head>
+        <% include ./ethPartials/head %>    
+    </head>
+    <body>
+        <% include ./ethPartials/ethMain/ethereumNav %>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var transactionsHash = '<%=block.number%>';
+                sessionStorage.setItem('Block Height', transactionsHash);
+                sessionStorage.setItem('Time Stamp', '<%=block.timestamp%>');
+                
+                function numberWithCommas(x) {
+                    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                }
+                
+                function unixTime(t) {
+                    var date    = new Date(t*1000);
+                    var year    = date.getFullYear();
+                    var month   = "0" + (date.getMonth()+1);
+                    var day     = "0" + date.getDate();
+                    var hour    = "0" + date.getHours();
+                    var minute  = "0" + date.getMinutes();
+                    var second  = "0" + date.getSeconds();
+                    return year + "-" + month.substr(-2) + "-" + day.substr(-2) + " " + hour.substr(-2) + ":" + minute.substr(-2) + ":" + second.substr(-2);               
+                }
+
+                $('#timestamp').html(unixTime("<%=block.timestamp%>"));
+                $('#difficulty').html(numberWithCommas("<%=block.difficulty%>"));
+                $('#totalDifficulty').html(numberWithCommas('<%=block.totalDifficulty%>'));
+                $('#size').html(numberWithCommas('<%=block.size%>'));
+                $('#gasUsed').html(numberWithCommas('<%=block.gasUsed%>'));
+                $('#gasLimit').html(numberWithCommas('<%=block.gasLimit%>'));
+               
+                $("span a[class='transactions']").on('click', function(){
+                    window.location.href = '/ethereum/transactions/' + transactionsHash;  
+                });    
+            });       
+
+            
+        </script>
+        
+        <div class="container home home-welcome">
+            <div class='signBody'>
+                <h3>
+                    <a id="" class="deep-link" href="" aria-hidden="true" rel="nofollow">
+                        <svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"></svg>
+                    </a>
+                    Ethereum / block
+                </h3>
+                <hr>
+                </br>
+                <blockquote>
+                    <p>Block  #<%=block.number%></p>
+                </blockquote>
+                <h5>
+                    <a id="" class="deep-link" href="" aria-hidden="true" rel="nofollow">
+                        <svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"></svg>
+                    </a>
+                    ehtereum 블록 체인의 깊이 <%=block.number%> 에서 차단
+                </h5>         
+                <hr>              
+            </div>
+            
+            <div class='signBody'>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="width: 200px;">Block Height</span>
+                        <span type="text" value="" class="form-control" name="Block Height" style="width: 1026px;"><%=block.number%></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="width: 200px;">timestamp</span>
+                        <span type="text" value="" class="form-control" id="timestamp" name="timestamp" style="width: 1026px;"></span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="width: 200px;">transactions</span>
+                        <span type="text" value="" class="form-control" id="transactions" name="transactions" style="width: 1026px;"><a class='transactions'><%= block.transactions.length %>transactions</a></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="width: 200px;">uncles</span>
+                        <span type="text" value="" class="form-control" name="Block Height" style="width: 1026px;">
+                            <% if(block.uncles.length == 0){%>
+                                0
+                            <% } else {%>
+                                <%=block.uncles%>
+                            <% }%>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="width: 200px;">difficulty</span>
+                        <span type="text" value="" class="form-control" id="difficulty" name="difficulty" style="width: 1026px;"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="width: 200px;">totalDifficulty</span>
+                        <span type="text" value="" class="form-control" id="totalDifficulty" name="totalDifficulty" style="width: 1026px;"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="width: 200px;">size</span>
+                        <span type="text" value="" class="form-control" id="size" name="size" style="width: 1026px;"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="width: 200px;">gasUsed</span>
+                        <span type="text" value="" class="form-control" id="gasUsed" name="gasUsed" style="width: 1026px;"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="width: 200px;">gasLimit</span>
+                        <span type="text" value="" class="form-control" id="gasLimit" name="gasLimit" style="width: 1026px;"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="width: 200px;">hash</span>
+                        <span type="text" value="" class="form-control" id="hash" name="hash" style="width: 1026px;"><%=block.hash%></span>
+                    </div>
+                </div>
+            </div>
+            </br>
+            <p>Copyright 2016, Ethereum Revision 341015ab.</p>         
+        </div>
+                  
+    </body>
+</html>
+

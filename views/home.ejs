@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <% include ./partials/head %>    
+    </head>
+    <body>
+        <% include ./partials/navHome %>
+        <script type="text/javascript">
+            $(document).ready(function(){ 
+                // $.ajax({
+                //     type: 'get',
+                //     url: '/ajax',
+                //     dataType: 'json'
+                // })
+                // .done(function(latest){
+                //     console.log(JSON.stringify(latest));
+                //     console.log(JSON.stringify(latest.number));
+                //     var a = JSON.stringify(latest.number);
+                //     $('.u-label u-label--xs u-label--badge-in u-label--secondary text-center text-nowrap').html(a);
+                // });
+            });             
+        </script>
+        
+        <div class="container home home-welcome">
+            <div class="jumbotron" style="padding-top: 1px;padding-right: 10px;background-color:#f0f3db">
+                <div class="search">
+                    <a href='/ethereum'><div><h3 style='font-size: 15px;color: black;'>Ehtereum</h3></div></a>
+                </div>                
+            </div>
+
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="card h-100">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h2 class="card-header-title">Latest Blocks</h2>
+                    </div>
+                    <hr class="hr-space" style="">
+                    <div class="js-scrollbar card-body overflow-hidden mCustomScrollbar _mCS_1 mCS-autoHide" style="height: 120px; position: relative; overflow: visible;">
+                        <div id="mCSB_1" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0">
+                            <div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
+                                <div class="row" style="">
+                                    <div class="col-sm-4">
+                                        <div class="media align-items-sm-center mr-4 mb-1 mb-sm-0">
+                                            <div class="d-none d-sm-flex mr-2">
+                                                <span class="btn btn-icon btn-soft-secondary">
+                                                    <span class="btn-icon__inner text-dark">Block Height</span>
+                                                </span>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="d-none d-sm-block" style="width: 600px;padding-top: 8px;">
+                                                <span class="u-label u-label--xs u-label--badge-in u-label--secondary text-center text-nowrap" title="Block Reward"> </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="hr-space" style="">
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-xs btn-block btn-soft-primary" href="/viewBlockNumber">View blocks Detail</a>
+                        </div>                      
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card h-100">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h2 class="card-header-title">Latest Transactions</h2>
+                    </div>
+                    <hr class="hr-space" style="">
+                    <div class="js-scrollbar card-body overflow-hidden mCustomScrollbar _mCS_2 mCS-autoHide" style="height: 120; position: relative; overflow: visible;">
+                        <div id="mCSB_2" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" tabindex="0" style="max-height: none;">
+                            <div id="mCSB_2_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="media align-items-sm-center mr-4 mb-1 mb-sm-0">
+                                            <div class="d-none d-sm-flex mr-2">
+                                                <span class="btn btn-icon btn-soft-secondary rounded-circle">
+                                                    <span class="btn-icon__inner text-dark">Tx</span>
+                                                </span> 
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="d-sm-flex justify-content-between">
+                                            <div class="text-nowrap mr-4 mb-1 mb-sm-0">
+                                                <span>From <a class="hash-tag text-truncate" href="/"></a></span>
+                                                <span class="d-sm-block">To <a href="/" class="hash-tag hash-tag--sm text-truncate"></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="hr-space">
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-xs btn-block btn-soft-primary" href="/">View transaction Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container home home-welcome">
+            <div class="jumbotron" style="padding-top: 1px;padding-right: 10px;background-color:#e5f3e9">
+                <div class="search">
+                    <a href='/bitcoin'><div><h3 style='font-size: 15px;color: black;'>Bitcoin</h3></div></a>
+                </div>                
+            </div>        
+        </div>
+    </body>
+</html>
+

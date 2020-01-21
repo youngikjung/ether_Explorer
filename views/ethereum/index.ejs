@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <% include ./ethPartials/head %>
+    </head>
+    <body>
+        <% include ./ethPartials/ethMain/ethereumNav %>
+        <% include ./ethPartials/choices %>
+        <% include ./ethPartials/flatpickr %>
+        <% include ./ethPartials/custom-masterilaize %>
+        <% include ./ethPartials/ethMain/ethMainJs %>               
+        <div class="container home home-welcome">
+            <div class="s003" style="background-color: #0965dd;">
+                <form action="/ethereum/searchBlockNumber" method="POST" id="frm">
+                    <p style="font-size : 15px; color:#ffffff; margin-bottom: 5px; margin-top: 10px;">Ethereum Blockchain Explorer</p>
+                    <div class="inner-form">
+                        <div class="input-field first-wrap">
+                            <div class="input-select">
+                                <select data-trigger="" name="lstSubject">
+                                    <option value='block' placeholder="">block</option>
+                                    <option value='address'>address</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-field second-wrap">
+                            <input id="search" type="text" name="search" placeholder="Search something..." />
+                        </div>
+                        <div class="input-field third-wrap">
+                            <button class="btn-search" type="submit" name="searchBlockButton">
+                                <svg class="svg-inline--fa fa-search fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </br>
+        <% if(isAuth) { %>
+            <div class="container home home-welcome">
+                <hr>
+                </br>
+                <div class="wrap-table100" style="padding-right: 30px;">
+                    <div class="table100 ver1 m-b-110" id="dbblock-connecter">
+                    </div>
+                    </br>
+                    <div class="card-footer">
+                        <a class="btn btn-xs btn-block btn-soft-primary" href="/ethereum/viewBlockNumber" style="font-size: 15px;">View blocks Detail</a>
+                    </div>
+                    
+                </div>
+            </div>
+            </br>
+            </br>
+            <div class="container home home-welcome">
+                <div class="wrap-table100" style="padding-right: 30px;">
+                    <div class="table100 ver1 m-b-110" id="dbtx-connecter">
+                    </div>
+                    </br>
+                    <div class="card-footer">
+                        <a class="btn btn-xs btn-block btn-soft-primary" href="/ethereum/viewTxNumber" style="font-size: 15px;">View transaction Detail</a>
+                    </div>
+                </div>
+            </div>
+            </br>
+            </br>
+        <% } else { %>
+            <div class="container home home-welcome">
+                <hr class="hr-space">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="s003">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h3 class="Text__TitleMedium-sc-1fwf07x-2 fdIbPB" style="border-top-width: 20px; padding-top: 80px;">금융의 미래를 위한 수단</h3>
+                        </div>
+                    </div>
+                    <div class="s003">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <p class="Text__ParagraphXLarge-sc-1fwf07x-7 jtJIkD" style="border-top-width: 40px; margin-top: 60px; font-size: 18px;">가장 신뢰받는 암호화폐</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <img src=/img/1.png>
+                    </div>
+                </div>
+            </div>
+            </br>
+            <div class="container home home-welcome">
+                <hr class="hr-space">
+                </br></br></br>
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h3 class="Text__TitleMedium-sc-1fwf07x-2 fdIbPB">투자</h3>
+                        </div>
+                        <hr class="hr-space" style="">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <p class="Text__ParagraphXLarge-sc-1fwf07x-7 jtJIkD">세계에서 가장 신뢰받고 안전한 암호화폐 지갑을 이용해 비트코인, 이더리움, 비트코인 캐시를 교환하고 거래하세요.</p>
+                            <a href="/ethereum/logIn">더 알아보기→</a>
+                        </div>
+                        <hr class="hr-space" style="">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h3 class="Text__TitleMedium-sc-1fwf07x-2 fdIbPB">둘러보기</h3>
+                        </div>
+                        <hr class="hr-space" style="">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <p class="Text__ParagraphXLarge-sc-1fwf07x-7 jtJIkD">가장 인기있는 블록 탐색기를 사용하여 Bitcoin, Ethereum 및 Bitcoin Cash 블록 체인에서 트랜잭션을 검색하고 확인하십시오.</p>
+                            <a href="/ethereum/logIn">더 알아보기→</a>
+                        </div>
+                        <hr class="hr-space" style="">
+                    </div>
+                </div>
+            </div>
+        <% } %>
+
+        <script>               
+            const choices = new Choices('[data-trigger]',
+            {
+                searchEnabled: false,
+                itemSelectText: '',
+            });
+        </script>
+    </body>
+</html>
