@@ -7,7 +7,7 @@
 This is a starter boilerplate app I've put together using the following technologies:
 
 * [Express](http://expressjs.com)
-* [ejs]](https://www.npmjs.com/package/node-bitcoin-rpc)
+* [ejs](https://www.npmjs.com/package/node-bitcoin-rpc)
 * [web3](https://www.npmjs.com/package/web3)
 
 
